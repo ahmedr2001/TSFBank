@@ -1,0 +1,349 @@
+.transactions {
+    color: #f0f0f0;
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-position: left center;
+    background-blend-mode: darken;
+    padding: 5rem 2rem;
+  }
+  
+  .transactions .top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+  .transactions .top h1 {
+    color: #f0f0f0;
+  }
+  
+  .transactions .responsive-table {
+    overflow-x: auto;
+  }
+  
+  .transactions .responsive-table table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .transactions .responsive-table table thead tr {
+    color: #f0f0f0;
+    background-color: #0a0a0a;
+  }
+  
+  .transactions .responsive-table table th,
+  .transactions .responsive-table table td {
+    opacity: 0;
+    padding: 0.8rem 1rem;
+  }
+  
+  .transactions .responsive-table table tbody tr:nth-child(even) {
+    color: #f0f0f0;
+    background-color: #0f0f0f;
+  }
+  
+  .transactions .responsive-table table tbody tr:nth-child(odd) {
+    color: #f0f0f0;
+    background-color: #434343;
+  }
+  
+  .transactions .responsive-table table tbody a {
+    color: #2edd65;
+  }
+  
+  .transactions .responsive-table table tfoot tr {
+    background-color: #121111;
+    color: #f0f0f0;
+  }
+  
+  .transaction-details {
+    padding: 5rem 2rem;
+    padding-top: 7rem;
+    color: #f0f0f0;
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-position: left center;
+    background-blend-mode: darken;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    justify-items: center;
+    -ms-grid-columns: minmax(20vw, 30vw) 1fr minmax(20vw, 30vw);
+        grid-template-columns: minmax(20vw, 30vw) 1fr minmax(20vw, 30vw);
+    grid-row-gap: 1.5rem;
+  }
+  
+  .transaction-details .col-1,
+  .transaction-details .col-2,
+  .transaction-details .transaction-date {
+    grid-column: 1 / -1;
+  }
+  
+  .transaction-details .bi {
+    margin-right: 0.5rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: 2px solid #f0f0f0;
+    padding: 0.8rem 1rem;
+    color: #f0f0f0;
+    background-color: #972268;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .btn .bi {
+    margin-left: 0.5rem;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #c10b6f;
+    z-index: -1;
+    -webkit-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    color: #0f0f0f;
+  }
+  
+  .btn:hover::before {
+    width: 100%;
+  }
+  
+  .transfer {
+    padding: 5rem 2rem;
+    position: relative;
+    color: #f0f0f0;
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-position: left center;
+    background-blend-mode: darken;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .transfer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-position: left center;
+    background-blend-mode: darken;
+    color: #f0f0f0;
+    -webkit-animation: entering 1s ease forwards;
+            animation: entering 1s ease forwards;
+  }
+  
+  .transfer form {
+    width: 90%;
+  }
+  
+  .transfer form h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .transfer form .form-field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .transfer form select,
+  .transfer form input,
+  .transfer form button {
+    color: #f0f0f0;
+    background-color: #0f0f0f;
+    border: none;
+    border-radius: 0;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .transfer form button {
+    cursor: pointer;
+    width: 100%;
+    border: 2px solid #f0f0f0;
+    background-color: #f0f0f0;
+    color: #0f0f0f;
+    font-size: 1.1rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .transfer form button i {
+    margin-left: 0.5rem;
+  }
+  
+  .transfer form button:hover {
+    background-color: #0f0f0f;
+    color: #f0f0f0;
+  }
+  
+  @media screen and (min-width: 850px) {
+    .transactions {
+      padding: 5rem 7rem;
+    }
+    .transactions .top {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+    }
+    .transaction-details {
+      padding: 5rem 7rem;
+      justify-items: left;
+          grid-template-areas: "sender . reciever"
+   "sender-name . reciever-name"
+   "sender-account . reciever-account"
+   "sent . recieved"
+   "sender-balance . reciever-balance"
+   "transaction-date transaction-date transaction-date";
+    }
+    .transaction-details .sender {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      grid-area: sender;
+    }
+    .transaction-details .sender-name {
+      -ms-grid-row: 2;
+      -ms-grid-column: 1;
+      grid-area: sender-name;
+    }
+    .transaction-details .sender-account {
+      -ms-grid-row: 3;
+      -ms-grid-column: 1;
+      grid-area: sender-account;
+    }
+    .transaction-details .sender-balance {
+      -ms-grid-row: 5;
+      -ms-grid-column: 1;
+      grid-area: sender-balance;
+    }
+    .transaction-details .sent {
+      -ms-grid-row: 4;
+      -ms-grid-column: 1;
+      grid-area: sent;
+    }
+    .transaction-details .reciever {
+      -ms-grid-row: 1;
+      -ms-grid-column: 3;
+      grid-area: reciever;
+    }
+    .transaction-details .reciever-name {
+      -ms-grid-row: 2;
+      -ms-grid-column: 3;
+      grid-area: reciever-name;
+    }
+    .transaction-details .reciever-account {
+      -ms-grid-row: 3;
+      -ms-grid-column: 3;
+      grid-area: reciever-account;
+    }
+    .transaction-details .reciever-balance {
+      -ms-grid-row: 5;
+      -ms-grid-column: 3;
+      grid-area: reciever-balance;
+    }
+    .transaction-details .recieved {
+      -ms-grid-row: 4;
+      -ms-grid-column: 3;
+      grid-area: recieved;
+    }
+    .transaction-details .transaction-date {
+      -ms-grid-row: 6;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 3;
+      grid-area: transaction-date;
+    }
+    .transaction-details .col-1 {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+      grid-column: 1 / 2;
+    }
+    .transaction-details .col-2 {
+      grid-column: 3 / -1;
+    }
+    .transaction-details .transaction-date {
+      -ms-grid-column-align: center;
+          justify-self: center;
+    }
+  }
+  
+  @media screen and (min-width: 650px) {
+    .transfer {
+      padding: 4rem 7rem 2rem 7rem;
+    }
+    .transfer form {
+      width: 60%;
+    }
+  }
+  
+  @-webkit-keyframes entering {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  @keyframes entering {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  /*# sourceMappingURL=transactions.css.map */

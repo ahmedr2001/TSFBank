@@ -1,0 +1,44 @@
+<%- include('../layouts/header') %>
+
+<div class="customers">
+    <h1>Customers</h1>
+    <div class="responsive-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Account Number</th>
+                    <th>Age</th>
+                    <th>Balance</th>
+                    <th>Location</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% customers.forEach(customer => { %>
+                    <tr>
+                        <td><%= customer.name %></td>
+                        <td><%= customer.email %></td>
+                        <td><%= customer.accountNumber %></td>
+                        <td><%= customer.age %></td>
+                        <td><%= customer.balance %>$</td>
+                        <td><%= customer.location %></td>
+                        <td><a href="/customers/<%= customer._id %>">Open</a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2">Number of customers</th>
+                    <td><%= customers.length %></td>
+                    <th>Total money</th>
+                    <td><%= totalBalance %>$</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <a href="/customers/createCustomer" class="transfer-btn">Create Customer <i class="bi bi-arrow-right-circle"></i></a>
+</div>
+
+<%- include('../layouts/footer') %>

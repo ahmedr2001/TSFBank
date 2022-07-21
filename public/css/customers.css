@@ -1,0 +1,198 @@
+.customers,
+.transactions-history {
+  background-image: url("/img/background.jpg");
+  background-size: cover;
+    background-position: left center;
+    background-blend-mode: darken;
+  padding: 5rem 2rem;
+}
+
+.customers h1,
+.transactions-history h1 {
+  color: #f8efef;
+  margin-bottom: 1.5rem;
+}
+
+.customers .responsive-table,
+.transactions-history .responsive-table {
+  overflow-x: auto;
+}
+
+.customers .responsive-table table,
+.transactions-history .responsive-table table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+
+.customers .responsive-table table thead tr,
+.transactions-history .responsive-table table thead tr {
+  background-color: #0c0c0c;
+  color: #f0f0f0;
+}
+
+.customers .responsive-table table th,
+.customers .responsive-table table td,
+.transactions-history .responsive-table table th,
+.transactions-history .responsive-table table td {
+  opacity: 0;
+  padding: 0.8rem 1rem;
+}
+
+.customers .responsive-table table tbody tr:nth-child(even),
+.transactions-history .responsive-table table tbody tr:nth-child(even) {
+  background-color: #070707;
+  color: #f0f0f0;
+}
+
+.customers .responsive-table table tbody tr:nth-child(odd),
+.transactions-history .responsive-table table tbody tr:nth-child(odd) {
+  background-color: #323232;
+  color: #f0f0f0;
+}
+
+.customers .responsive-table table tbody a,
+.transactions-history .responsive-table table tbody a {
+  color: #51dd2e;
+}
+
+.customers .responsive-table table tfoot tr,
+.transactions-history .responsive-table table tfoot tr {
+  background-color: #090909;
+  color: #f0f0f0;
+}
+
+.customer-details {
+  padding: 5rem 2rem;
+  padding-top: 7rem;
+  color: #f0f0f0;
+  background-image: url("/img/background.jpg");
+  background-size: cover;
+    background-position: left center;
+    background-blend-mode: darken;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  justify-items: center;
+  -ms-grid-columns: minmax(20vw, 30vw) 1fr minmax(20vw, 30vw);
+      grid-template-columns: minmax(20vw, 30vw) 1fr minmax(20vw, 30vw);
+  grid-row-gap: 2rem;
+}
+
+.customer-details .col-1,
+.customer-details .col-2,
+.customer-details .transfer-btn {
+  grid-column: 1 / -1;
+}
+
+.customer-details .bi {
+  margin-right: 0.5rem;
+}
+
+.customer-details .transfer-btn, .customers .transfer-btn {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 2px solid #f0f0f0;
+  padding: 0.8rem 1rem;
+  background-color: #f10c0c;
+  color: #f0f0f0;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.customer-details .transfer-btn .bi, .customers .transfer-btn .bi {
+  margin-left: 0.5rem;
+}
+
+.customer-details .transfer-btn::before, .customers .transfer-btn::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #d61bc0;
+  z-index: -1;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.customer-details .transfer-btn:hover, .customers .transfer-btn:hover {
+  color: #0f0f0f;
+}
+
+.customer-details .transfer-btn:hover::before, .customers .transfer-btn:hover::before {
+  width: 100%;
+}
+
+.transactions-history {
+  padding: 5rem 2rem;
+  padding-top: 0 !important;
+  text-align: center;
+}
+
+@media screen and (min-width: 850px) {
+  .customers {
+    padding: 5rem 7rem;
+  }
+  .customer-details {
+    padding: 5rem 7rem;
+    justify-items: left;
+        grid-template-areas: "name . account-number"
+ "email . balance"
+ "birthdate . nationality";
+  }
+  .customer-details .name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: name;
+  }
+  .customer-details .email {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: email;
+  }
+  .customer-details .birthdate {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: birthdate;
+  }
+  .customer-details .account-number {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: account-number;
+  }
+  .customer-details .balance {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: balance;
+  }
+  .customer-details .nationality {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: nationality;
+  }
+  .customer-details .col-1 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
+  .customer-details .col-2 {
+    grid-column: 3 / -1;
+  }
+  .customer-details .transfer-btn {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .transactions-history {
+    padding: 5rem 7rem;
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=customers.css.map */

@@ -1,0 +1,34 @@
+<%- include('../layouts/header') %>
+
+<div class="transfer">
+    <form action="/customers" method="POST">
+        <h1>Create a customer</h1>
+        <div class="form-field">
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" placeholder="Name">
+        </div>
+        <div class="form-field">
+            <label for="age">Age: </label>
+            <input type="text" id="age" name="age" placeholder="Age">
+        </div>
+        <div class="form-field">
+            <label for="accountNumber">Account Number: </label>
+            <input type="text" name="accountNumber" id="accountNumber" placeholder="Account Number">
+        </div>
+        <div class="form-field">
+            <label for="balance">Balance:</label>
+            <input type="number" name="balance" id="balance" placeholder="Balance">
+        </div>
+        <div class="form-field">
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" placeholder="example@example.com">
+        </div>
+        <div class="form-field">
+            <label for="location">Location: </label>
+            <input type="text" name="location" id="location" placeholder="Location">
+        </div>
+        <button type="submit">Create <i class="bi"></i></button>
+    </form>
+</div>
+
+<%- include('../layouts/footer') %>

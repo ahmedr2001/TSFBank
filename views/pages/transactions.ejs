@@ -1,0 +1,40 @@
+<%- include('../layouts/header') %>
+
+<div class="transactions">
+    <div class="top">
+        <h1>All Transactions</h1>
+        <a href="/transactions/transfer" class="btn">Transfer Money <i class="bi bi-arrow-right-circle"></i></a>
+    </div>
+    <div class="responsive-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% transactions.forEach(transaction => { %>
+                <tr>
+                    <td><%= transaction.from %></td>
+                    <td><%= transaction.to %></td>
+                    <td><%= transaction.amount %>$</td>
+                    <td><%= transaction.createdAt.toLocaleString() %></td>
+                    <td><a href="/transactions/<%= transaction._id %>">Open</a></td>
+                </tr>
+                <% }); %>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">Total transactions count</th>
+                    <td><%= transactions.length %></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<%- include('../layouts/footer') %>

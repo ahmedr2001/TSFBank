@@ -1,0 +1,59 @@
+<%- include('../layouts/header') %>
+
+<section class="landing-page">
+    <h1>TSFBank</h1>
+    <h2>The Sparks Foundation's basic banking system</h2>
+</section>
+
+<section class="services">
+    <h1>Services</h1>
+    <div class="service customers">
+        <div class="img-container">
+            <img src="/img/customers.png" alt="Customers">
+        </div>
+        <div class="service-details">
+            <h2>Customers</h2>
+            <p>Check our customers' details to select who to transfer money to</p>
+            <button><a href="/customers">See details<i class="bi bi-arrow-right"></i></a></button>
+        </div>
+    </div>
+    <div class="service transactions">
+        <div class="service-details">
+            <h2>Transactions</h2>
+            <p>You can see all of the transactions' history and select a certain transaction to see its details.</p>
+            <button><a href="/transactions">See more <i class="bi bi-arrow-right"></i></a></button>
+        </div>
+        <div class="img-container">
+            <img src="/img/transaction.png" alt="Transactions">
+        </div>
+    </div>
+</section>
+
+<section class="contact-us">
+    <!-- <form>
+        <h3>Message us</h3>
+        <input type="text" name="senderName" placeholder="Name" required>
+        <input type="email" name="senderEmail" placeholder="Email" required>
+        <textarea name="message" cols="30" rows="5" placeholder="Message..." required></textarea>
+        <button type="submit">Send <i class="bi bi-envelope-fill"></i></button>
+    </form> -->
+    <div class="contact-information">
+        <h3>Our socials</h3>
+        <div>
+            <div class="socials">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <div class="email">
+                <a href="mailto:contact@TSFBank.org">contact@TSFBank.org</a>
+            </div>
+            <div class="phone">
+                <a href="tel:+20123456789">+20123456789</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../layouts/footer') %>

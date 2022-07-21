@@ -1,0 +1,69 @@
+<%- include('../layouts/header') %>
+
+<div class="customer-details">
+    <h1 class="col-1 name"><%= customer.name %></h1>
+    <h3 class="col-1 email"><a href="mailto:<%= customer.email %>"><i class="bi bi-envelope"></i>
+    <%= customer.email %></a></h3>
+    <p class="col-1 birthdate"><i class="bi bi-calendar-event"></i> <%= customer.age %></p>
+    <p class="col-2 account-number"><b>Account Number:</b> <%= customer.accountNumber %></p>
+    <p class="col-2 balance"><b>Balance:</b><%= customer.balance %>$</p>
+    <p class="col-2 nationality"><b>Location:</b><%= customer.location %></p>
+    <a class="transfer-btn" href="/transactions/transfer?to=<%= customer.accountNumber %>">Transfer Money <i class="bi bi-arrow-right-circle"></i></a>
+    <a data-doc="<%= customer._id %>" class="transfer-btn delete">Delete Customer <i class="bi bi-arrow-right-circle"></i></a>
+</div> 
+
+<div class="transactions-history">
+    <h1>Transactions History</h1>
+    <div class="responsive-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sent/Recieved</th>
+                    <th>Sender/Reciever</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% transactions.forEach(transaction => { %>
+                <tr>
+                    <% if (transaction.from === customer.account) { %>
+                    <td>Sent</td>
+                    <td><%= transaction.to %></td>
+                    <% } else { %>
+                    <td>Recieved</td>
+                    <td><%= transaction.from %></td>
+                    <% } %>
+                    <td><%= transaction.amount %>$</td>
+                    <td><%= transaction.createdAt.toLocaleString() %></td>
+                    <td><a href="/transactions/<%= transaction._id %>">Open</a></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const del = document.querySelector('a.delete');
+
+    del.addEventListener('click', e => {
+        const endpoint = `/customers/${del.dataset.doc}`;
+
+        fetch(endpoint, {
+            method: 'DELETE'
+        })
+        .then(res => {
+            res.json();
+            console.log(res);
+        })
+        .then(data => window.location.href = '/customers')
+        .catch(err => {
+            console.log(err);
+            err.json();
+        });
+    });
+</script>
+
+<%- include('../layouts/footer') %>

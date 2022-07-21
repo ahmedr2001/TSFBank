@@ -1,0 +1,38 @@
+<%- include('../layouts/header') %>
+
+<div class="transaction-details">
+    <h1 class="col-1 sender">Sender</h1>
+    <h2 class="col-1 sender-name"><a href="/customers/<%= sender._id %>"><%= sender.name %></a></h2>
+    <p class="col-1 sender-account"><b>Account No.</b>: <%= sender.accountNumber %></p>
+    <p class="col-1 sent"><b>Sent</b>: <%= transaction.amount %>$</p>
+    <p class="col-1 sender-balance"><b>Balance</b>: <%= sender.balance %>$</p>
+    <h1 class="col-2 reciever">Receiver</h1>
+    <h2 class="col-2 reciever-name"><a href="/customers/<%= receiver._id %>"><%= receiver.name %></a></h2>
+    <p class="col-2 reciever-account"><b>Account No.</b>: <%= receiver.accountNumber %></p>
+    <p class="col-2 recieved"><b>Received</b>: <%= transaction.amount %>$</p>
+    <p class="col-2 reciever-balance"><b>Balance</b>: <%= receiver.balance %>$</p>
+    <p class="transaction-date"><b>Transaction Date</b>: <%= transaction.createdAt.toLocaleString() %></p>
+    <a data-doc="<%= transaction._id %>" class="btn delete">Rescind Transfer <i class="bi bi-arrow-right-circle"></i></a>
+</div>
+<script>
+    const trashcan = document.querySelector('a.delete');
+
+    trashcan.addEventListener('click', (e) => {
+        const endpoint = `/transactions/${trashcan.dataset.doc}`;
+
+        fetch(endpoint, {
+            method: 'DELETE'
+        })
+        .then(res => {
+            console.log(res);
+            res.json();
+        })
+        .then(data => window.location.href = '/transactions')
+        .catch(err => {
+            console.log(err);
+            err.json();
+        });
+    });
+</script>
+<%- include('../layouts/footer') %>
+
