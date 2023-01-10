@@ -113,7 +113,7 @@ router.delete('/:id', async (req, res) => {
 
             await transaction.delete();
 
-            res.sendStatus(200);
+            res.status(200);
         }
 
         res.redirect('/');
