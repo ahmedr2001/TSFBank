@@ -74,7 +74,7 @@ router.delete('/:id', async (req, res) => {
         await Transaction.findByIdAndRemove(customer.transactions);
         await customer.delete();
 
-        res.sendStatus(200);
+        res.status(200);
         res.redirect('/');
     } catch (err) {
         res.send(err);
